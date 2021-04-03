@@ -203,7 +203,7 @@ def discover_catalog(mssql_conn, config):
                     case when cc.COLUMN_NAME is null then 0 else 1 end
                 FROM INFORMATION_SCHEMA.COLUMNS c
 
-                left join CONSTRAINT_COLUMNS cc
+                left join constraint_columns cc
                     on cc.TABLE_NAME = c.TABLE_NAME
                     and cc.TABLE_SCHEMA = c.TABLE_SCHEMA
                     and cc.COLUMN_NAME = c.COLUMN_NAME
